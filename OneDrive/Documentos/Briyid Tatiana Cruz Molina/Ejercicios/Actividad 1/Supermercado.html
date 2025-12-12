@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Promoción Supermercado</title>
+</head>
+<body>
+
+  <h2>Promoción del Supermercado</h2>
+
+  <p>Total de la compra:</p>
+  <input id="total" type="number">
+
+  <p>Número escogido (del 1 al 100):</p>
+  <input id="numero" type="number">
+
+  <button onclick="calcular()">Calcular descuento</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      let total = Number(document.getElementById("total").value);
+      let numero = Number(document.getElementById("numero").value);
+      let descuento = 0;
+
+      if (numero < 74) {
+        descuento = total * 0.15; 
+      } else {
+        descuento = total * 0.20; 
+      }
+
+      let totalFinal = total - descuento;
+
+      document.getElementById("resultado").innerHTML =
+        "Número escogido: " + numero + "<br>" +
+        "Descuento aplicado: $" + descuento.toFixed(2) + "<br>" +
+        "Total a pagar: $" + totalFinal.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
