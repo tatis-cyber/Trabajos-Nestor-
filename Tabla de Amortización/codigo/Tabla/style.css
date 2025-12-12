@@ -1,0 +1,141 @@
+:root{
+    --bg: #f3f4f6;
+    --card: #ffffff;
+    --primary: #0b5ed7;
+    --primary-dark: #0746a8;
+    --muted: #f2f2f2;
+    --text: #222;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 720px;
+    margin: 50px auto;
+    background-color: var(--card);
+    padding: 36px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+h1 {
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.formulario label {
+    width: 100%;
+    max-width: 560px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+.formulario input {
+    width: 100%;
+    max-width: 100%;
+    padding: 9px 12px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.formulario button {
+    width: 30%;
+    padding: 10px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 10px;
+    box-shadow: 0 6px 14px rgba(11, 94, 215, 0.12);
+    transition: background 0.18s ease, transform 0.08s ease;
+    align-self: flex-start;
+    margin-left: calc((100% - 560px) /20);
+}
+
+.formulario button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.amort-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.amort-table thead {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.amort-table th {
+    padding: 10px 8px;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(0,0,0,0.08);
+    font-size: 14px;
+}
+
+.amort-table td {
+    padding: 8px 6px;
+    border-bottom: 1px solid #e6e6e6;
+    color: #222;
+}
+
+.amort-table tbody tr:nth-child(even) {
+    background-color: var(--muted);
+}
+
+.amort-table tbody tr:hover {
+    background-color: #e9f0ff;
+}
+
+.error {
+    color: #d0342c;
+    font-weight: 700;
+    margin-top: 14px;
+}
+
+@media (max-width: 520px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+    .formulario input, .formulario label {
+        max-width: 100%;
+    }
+    .formulario button {
+        width: 50%;
+        margin-left: 0;
+    }
+    .amort-table th, .amort-table td {
+        font-size: 13px;
+        padding: 8px 6px;
+    }
+}
