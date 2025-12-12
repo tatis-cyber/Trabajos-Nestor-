@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Comisión de Vendedores</title>
+</head>
+<body>
+
+  <h2>Comisión de la Cía. MAZDA</h2>
+
+  <p>Ventas del vendedor:</p>
+  <input id="venta" type="number">
+
+  <button onclick="calcular()">Calcular comisión</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      let venta = Number(document.getElementById("venta").value);
+      let comision = 0;
+
+      if (venta >= 1000000 && venta < 3000000) {
+        comision = venta * 0.03; 
+      } 
+      else if (venta >= 3000000 && venta < 5000000) {
+        comision = venta * 0.04; 
+      } 
+      else if (venta >= 5000000 && venta < 7000000) {
+        comision = venta * 0.05; 
+      } 
+      else if (venta >= 7000000 && venta < 10000000) {
+        comision = venta * 0.06; 
+      } 
+      else {
+        document.getElementById("resultado").innerHTML = 
+          "La venta debe ser menor de 10,000,000 y mayor de 1,000,000";
+        return;
+      }
+
+      document.getElementById("resultado").innerHTML =
+        "Venta total: $" + venta.toFixed(2) + "<br>" +
+        "Comisión: $" + comision.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>

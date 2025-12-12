@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Descuento de Artículo</title>
+</head>
+<body>
+
+  <h2>Calcular descuento</h2>
+
+  <p>Nombre del artículo:</p>
+  <input id="nombre">
+
+  <p>Clave (01 o 02):</p>
+  <input id="clave">
+
+  <p>Precio original:</p>
+  <input id="precio" type="number">
+
+  <button onclick="calcular()">Calcular descuento</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcular() {
+      let nombre = document.getElementById("nombre").value;
+      let clave = document.getElementById("clave").value;
+      let precio = Number(document.getElementById("precio").value);
+      let descuento = 0;
+
+      
+      if (clave == "01") {
+        descuento = precio * 0.10;
+      } 
+      
+      else if (clave == "02") {
+        descuento = precio * 0.20;
+      } 
+      
+      else {
+        document.getElementById("resultado").innerHTML = "Clave inválida (usa 01 o 02)";
+        return;
+      }
+
+      let precioFinal = precio - descuento;
+
+      document.getElementById("resultado").innerHTML =
+        "Artículo: " + nombre + "<br>" +
+        "Clave: " + clave + "<br>" +
+        "Precio original: $" + precio + "<br>" +
+        "Descuento: $" + descuento.toFixed(2) + "<br>" +
+        "Precio final: $" + precioFinal.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>
